@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 05-May-2025, 2:12:54 pm                     ---
+ * --- Generated at 05-May-2025, 6:30:46 pm                     ---
  * ----------------------------------------------------------------
  */
 package org.assignment.core.constants;
@@ -26,9 +26,18 @@ public class GeneratedNagaccCoreConstants
 	}
 	public static class Attributes
 	{
+		public static class AbstractOrder
+		{
+			public static final String DISPATCHDATE = "dispatchDate".intern();
+			public static final String DISPATCHORDERS = "dispatchOrders".intern();
+		}
 		public static class AbstractOrderEntry
 		{
 			public static final String SELLERINFO = "sellerInfo".intern();
+		}
+		public static class CMSSite
+		{
+			public static final String ORDERS = "orders".intern();
 		}
 		public static class Product
 		{
@@ -55,6 +64,7 @@ public class GeneratedNagaccCoreConstants
 	}
 	public static class Relations
 	{
+		public static final String CMSSITETOORDER = "CMSSiteToOrder".intern();
 		public static final String SELLERTOPRODUCT = "SellerToProduct".intern();
 	}
 	

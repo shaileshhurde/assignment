@@ -552,4 +552,5 @@
 	<bean id="commerceAddToCartSellerProductMergeDirective" depends-on="commerceAddToCartMethodHooks" parent="listMergeDirective">
 		<property name="add" ref="sellerProductAddToCartMethodHook"/>
 	</bean>
+
 </beans>

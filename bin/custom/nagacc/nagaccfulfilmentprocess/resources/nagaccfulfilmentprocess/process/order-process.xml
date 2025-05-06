@@ -92,6 +92,11 @@
 	</wait>
 
 	<action id="isProcessCompleted" bean="subprocessesCompletedAction">
+		<transition name="OK" to="setDispatchDate"/>
+		<transition name="NOK" to="waitForWarehouseSubprocessEnd"/>
+	</action>
+
+	<action id="setDispatchDate" bean="setOrderDispatchDate">
 		<transition name="OK" to="setOrderExpirationTime"/>
 		<transition name="NOK" to="waitForWarehouseSubprocessEnd"/>
 	</action>

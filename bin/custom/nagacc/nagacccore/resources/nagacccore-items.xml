@@ -33,6 +33,11 @@
             <sourceElement type="Product" cardinality="many" collectiontype="set" qualifier="sellers"/>
             <targetElement type="Seller" cardinality="many" collectiontype="set" qualifier="products"/>
         </relation>
+
+        <relation code="CMSSiteToOrder" localized="false">
+            <sourceElement type="CMSSite" cardinality="one" qualifier="dispatchOrders"/>
+            <targetElement type="AbstractOrder" cardinality="many" qualifier="orders" collectiontype="set"/>
+        </relation>
     </relations>
 
     <itemtypes>
@@ -135,6 +140,14 @@
             <itemtype code="AbstractOrderEntry" autocreate="false" generate="false">
                 <attributes>
                     <attribute qualifier="sellerInfo" type="Seller">
+                        <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="AbstractOrder" autocreate="false" generate="false">
+                <attributes>
+                    <attribute qualifier="dispatchDate" type="java.util.Date">
                         <persistence type="property"/>
                     </attribute>
                 </attributes>
