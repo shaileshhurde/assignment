@@ -553,4 +553,14 @@
 		<property name="add" ref="sellerProductAddToCartMethodHook"/>
 	</bean>
 
+	<bean id="ordersDao" class="org.assignment.core.dao.impl.DefaultOrderDaoImpl" parent="abstractItemDao">
+		<property name="flexibleSearchService" ref="flexibleSearchService"/>
+	</bean>
+
+	<bean id="orderToSiteJob" class="org.assignment.core.job.OrderToSiteJobPerformable" parent="abstractJobPerformable">
+		<property name="modelService" ref="modelService"/>
+		<property name="orderDao" ref="ordersDao"/>
+		<property name="baseSiteService" ref="baseSiteService"/>
+	</bean>
+
 </beans>

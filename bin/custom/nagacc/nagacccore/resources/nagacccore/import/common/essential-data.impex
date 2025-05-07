@@ -98,6 +98,13 @@ INSERT_UPDATE ServicelayerJob;code[unique=true];springId[unique=true]
 ;siteMapMediaJob;siteMapMediaJob
 ;quoteToExpireSoonJobPerformable;quoteToExpireSoonJobPerformable
 ;quoteExpiredJobPerformable;quoteExpiredJobPerformable
+;orderToSiteJob;orderToSiteJob
+
+INSERT_UPDATE CronJob;code[unique=true];job(code);singleExecutable;sessionLanguage(isocode)
+                     ;orderToSiteJobCronJob;orderToSiteJob;false;en
+
+INSERT_UPDATE Trigger;cronjob(code)[unique=true];cronExpression
+                     ;orderToSiteJobCronJob; 0 0 * * ?
 
 # Deactivate Frontend Restriction on category by default for perfomance purposes
 UPDATE SearchRestriction;code[unique=true];active[default=false]
